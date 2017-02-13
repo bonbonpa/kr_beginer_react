@@ -1,29 +1,30 @@
+![raect](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSithoqiOTODZ73obUF3Nj5bDueB4HG9PMUNQDVV9ROcKlijncE)
 
-Start React
+# Start React
 
-1. Intro React
+## 1. Intro React
 
-install react-app
+### install react-app
 
 ```sh
 $ npm install create-react-app -g
 $ npm install create-react-app --save
 ```
 
-create project
+### create project
 
 ```
 $ create react-app hello-react
 ```
 
-And Then Start project
+### And Then Start project
 ```sh
 $ cd hello-react
 $ npm start
 ```
 
 
-2. JSX Syntax
+## 2. JSX Syntax
 
 ```js
 import React, { Component } from 'react';
@@ -37,12 +38,10 @@ class App extends Component {
       );
     }
 }
-
 export default App;
-
 ```
 
-3. Style and Expression JSX
+## 3. Style and Expression JSX
 
 ```js
 class App extends Component {
@@ -61,11 +60,11 @@ class App extends Component {
 }
 ```
 
-4. Create Component
+## 4. Create Component
 
-Create file for Component
+### Create file for Component
 
-- Header.js
+#### Header.js
 
 ```js
 import React, { Component } from 'react';
@@ -85,7 +84,7 @@ export default Header;
 
 ```
 
-- Content.js
+#### Content.js
 
 ```js
 import React, { Component } from 'react';
@@ -104,7 +103,7 @@ class Content extends Component{
 export default Content;
 ```
 
-- Footer.js
+#### Footer.js
 ```js
 import React, { Component } from 'react';
 
@@ -123,7 +122,7 @@ export default Footer;
 
 ```
 
-And import Component to App.js
+### And import Component to App.js
 
 ```js
 import React, { Component } from 'react';
@@ -147,4 +146,4 @@ class App extends Component {
 export default App;
 ```
 
-5. Props
+## 5. Props
