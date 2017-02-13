@@ -1,7 +1,7 @@
 
 Start React
 
-1. Intro
+1. Intro React
 
 install react-app
 
@@ -24,3 +24,22 @@ $ npm start
 
 
 2. JSX Syntax
+
+```
+import React, { Component } from 'react';
+
+class App extends Component {
+    render(){
+      return(
+          <div>
+            <h1>React bonbonpa begin test</h1>
+          </div>
+      );
+    }
+}
+
+export default App;
+
+```
+
+3. Style and Expression JSX
