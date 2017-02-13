@@ -197,3 +197,45 @@ class Content extends Component{
 
 export default Content;
 ```
+
+## 6. State
+
+### Add state in file -> Content.js
+
+```js
+import React, { Component } from 'react';
+
+class Header extends Component{
+  //Add constructor and set state
+  constructor(){
+    super();
+    this.state = {
+      name : 'dvpdev',
+      count : 0,
+    }
+  }
+//Add
+  render(){
+    //Add function setTimeout and change state
+    setTimeout(() => {
+      this.setState({name : "React Tut"});
+    },3000);
+    //Add function setInterval for increse count
+    setInterval(() => {
+      this.setState({count : this.state.count + 1});
+    },1000);
+    //Add
+    return(
+        <div>
+            <h1>dvp Begin Header</h1>
+            //Add show name and count for change state
+            <h2>{this.state.name}</h2>      
+            <h2>{this.state.count}</h2>
+            //Add
+        </div>
+    );
+  }
+}
+
+export default Header;
+```
