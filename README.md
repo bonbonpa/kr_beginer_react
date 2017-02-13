@@ -367,3 +367,98 @@ class App extends Component {
 export default App;
 
 ```
+
+## 9. Router
+
+### Clear App.js for Router
+
+```js
+import React, { Component } from 'react';
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+
+class App extends Component {
+
+    render(){
+
+      return(
+          <div>
+
+          </div>
+      );
+    }
+}
+
+export default App;
+```
+
+### Install React Router
+
+go to folder project
+
+```sh
+$ npm install react-router
+```
+
+### move import component from App.js to index.js
+
+```js
+//App.js
+import React, { Component } from 'react';
+/*move to index.js
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+*/
+class App extends Component {
+
+      return(
+          <div>
+
+            <h1>dvp dev dev </h1>
+            // change path
+            <h1><a href="/header">Header</a></h1>
+            <h1><a href="/content">Content</a></h1>
+            <h1><a href="/footer">Footer</a></h1>
+            // change path
+          </div>
+      );
+    }
+
+export default App;
+```
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+//Add  -> move from App.js
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+//Add Router
+import {Router ,Route , Link, browserHistory} from 'react-router';
+//Add
+
+ReactDOM.render(
+  //Add Router and Route Path
+  <Router history={browserHistory}>
+    <Route path="/" component={App}/>
+      <Route path="/header" component={Header}/>
+      <Route path="/content" component={Content}/>
+      <Route path="/footer" component={Footer}/>
+  </Router>,
+  document.getElementById('root')
+  //Add
+);
+
+```
+
+### Add Home path to Content.js , Header.js , Footer.js
+
+```js
+<h1><a href="/">Home</a></h1>
+```
+
+> current update : 2017-02-13
