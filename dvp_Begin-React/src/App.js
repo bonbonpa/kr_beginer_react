@@ -9,14 +9,11 @@ class App extends Component {
       return(
           <div>
             <Header/>
-            <Content/>
+            <Content title="dvp React App" name="dvp dev" price="free"/>
             <Footer/>
           </div>
       );
     }
 }
-
-
-
 
 export default App;

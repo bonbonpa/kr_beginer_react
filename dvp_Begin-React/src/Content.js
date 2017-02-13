@@ -5,7 +5,10 @@ class Content extends Component{
 
     return(
         <div>
-          <h3>React Body Parser</h3>
+          <h3>Facebook dvp</h3>
+          <p>{this.props.title}</p>
+          <p>{this.props.name}</p>
+          <p>{this.props.price}</p>
         </div>
     );
   }

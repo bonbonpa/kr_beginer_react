@@ -147,3 +147,53 @@ export default App;
 ```
 
 ## 5. Props
+
+### Adding properties to components -> App.js
+
+```js
+import React, { Component } from 'react';
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+
+class App extends Component {
+    render(){
+
+      return(
+          <div>
+            <Header/>
+            ///Add
+            <Content title="dvp React App" name="dvp dev" price="free"/>  
+            ///Add
+            <Footer/>
+          </div>
+      );
+    }
+}
+
+export default App;
+```
+
+### And Show value of properties -> Contents.js
+
+```js
+import React, { Component } from 'react';
+
+class Content extends Component{
+  render(){
+
+    return(
+        <div>
+          <h3>Facebook dvp</h3>
+          ///Add
+          <p>{this.props.title}</p>
+          <p>{this.props.name}</p>
+          <p>{this.props.price}</p>
+          ///Add
+        </div>
+    );
+  }
+}
+
+export default Content;
+```
