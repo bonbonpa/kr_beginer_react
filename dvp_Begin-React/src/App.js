@@ -8,7 +8,7 @@ class App extends Component {
     super();
     this.state = {
       data : [],
-      message : "Look",
+      message : "Like",
       type : ""
     };
     this.changeMesssage = this.changeMesssage.bind(this);
@@ -16,13 +16,21 @@ class App extends Component {
   }
 
  changeMesssage(){
-    this.setState({message : "Like"});
+    if(this.state.message === "Unlike")
+    {
+      this.setState({message : "Like"});
+    }else{
+      this.setState({message : "Unlike"});
+    }
   }
   insertDate(){
     var item = "React";
     var myArray = this.state.data;
     myArray.push(item);
      this.setState({data : myArray});
+   }
+   onChange(event){
+     this.setState({type :  event.target.value})
    }
     render(){
 
@@ -36,6 +44,9 @@ class App extends Component {
             <br/>
             <h3>{this.state.data}</h3>
             <button onClick={this.insertDate}>Inset Data</button>
+            <br/><br/>
+            <input type="text" onChange={this.onChange.bind(this)}/>
+            <h1>Welcome : {this.state.type}</h1>
           </div>
       );
     }
