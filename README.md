@@ -43,3 +43,22 @@ export default App;
 ```
 
 3. Style and Expression JSX
+
+```
+class App extends Component {
+    render(){
+      var dvpStyle = {
+        fontSize : 100,
+        color : 'lightblue'
+      }
+      return(
+          <div>
+            <h1 style={dvpStyle}>React bonbonpa begin test</h1>
+            <h3>{100 * 55}</h3>
+          </div>
+      );
+    }
+}
+```
+
+4. Create Component
