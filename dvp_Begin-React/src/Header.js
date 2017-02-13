@@ -9,12 +9,7 @@ class Header extends Component{
     }
   }
   render(){
-    setTimeout(() => {
-      this.setState({name : "React Tut"});
-    },3000);
-    setInterval(() => {
-      this.setState({count : this.state.count + 1});
-    },1000);
+
     return(
         <div>
             <h1>dvp Begin Header</h1>

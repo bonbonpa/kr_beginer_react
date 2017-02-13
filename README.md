@@ -239,3 +239,66 @@ class Header extends Component{
 
 export default Header;
 ```
+
+## 7. Event
+
+### Add Event
+
+```js
+import React, { Component } from 'react';
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+
+class App extends Component {
+  // Create constructor and set begin state
+  constructor(){
+    super();
+    this.state = {
+      data : [],
+      message : "Look",
+      type : ""
+    };
+    //binding data when render dom
+    this.changeMesssage = this.changeMesssage.bind(this);
+    this.insertDate = this.insertDate.bind(this);
+  }
+
+//Add function setState change message
+ changeMesssage(){
+    this.setState({message : "Like"});
+  }
+
+//Add function setState for change data
+  insertDate(){
+    var item = "React";
+    var myArray = this.state.data;
+    myArray.push(item);
+     this.setState({data : myArray});
+   }
+    render(){
+
+      return(
+          <div>
+            <Header/>
+            <Content title="dvp React App" name="dvp dev" price="free"/>
+            <Footer/>
+            //Add message show data change state
+            <h3>{this.state.message}</h3>
+            //Add Event onClick for change state
+            <button onClick={this.changeMesssage}>{this.state.message}</button>
+            <br/>
+            //Add data for show
+            <h3>{this.state.data}</h3>
+            //Add Event onClick for change state
+            <button onClick={this.insertDate}>Inset Data</button>
+          </div>
+      );
+    }
+}
+
+export default App;
+
+```
+
+## 8. Event OnChange
