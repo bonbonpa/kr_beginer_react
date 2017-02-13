@@ -12,6 +12,7 @@ class Header extends Component{
 
     return(
         <div>
+        <h1><a href="/">Home</a></h1>
             <h1>dvp Begin Header</h1>
             <h2>{this.state.name}</h2>
             <h2>{this.state.count}</h2>
