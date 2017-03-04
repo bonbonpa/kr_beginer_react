@@ -26,18 +26,26 @@ ReactDOM.render(
 
 import {createStore} from 'redux';
 
-const reducer = (state,action)=>{
+//declare begin of state
+const initialState = {
+  result : 20000,
+  value : []
+}
+const reducer = (state=initialState,action)=>{
   switch (action.type) {
     case "ADD": //is Action
-        state += action.payload;
+        state = {
+          result : state.result += action.payload,
+          value : state.value
+        }
       break;
     case "SUBTRACT":
-        state -= action.payload;
+
       break;
   }
   return state;
-}
-const store = createStore(reducer , 15000 );
+}///
+const store = createStore(reducer);
 
 //subscribe
 store.subscribe(()=>{
@@ -46,9 +54,5 @@ store.subscribe(()=>{
 //change data in Store
 store.dispatch({
   type: "ADD",
-  payload : 5000
-})
-store.dispatch({
-  type: "SUBTRACT",
-  payload : 1000
+  payload : 10000
 })

@@ -507,3 +507,37 @@ install redux
 ```
 $ npm install redux -g --save
 ```
+
+typing code redux
+
+```js
+
+import {createStore} from 'redux';
+
+const reducer = (state,action)=>{
+  switch (action.type) {
+    case "ADD": //is Action
+        state += action.payload;
+      break;
+    case "SUBTRACT":
+        state -= action.payload;
+      break;
+  }
+  return state;
+}
+const store = createStore(reducer , 15000 );
+
+//subscribe
+store.subscribe(()=>{
+  console.log("Update Store",store.getState());
+})
+//change data in Store
+store.dispatch({
+  type: "ADD",
+  payload : 5000
+})
+store.dispatch({
+  type: "SUBTRACT",
+  payload : 1000
+})
+```
