@@ -35,7 +35,7 @@ const reducer = (state=initialState,action)=>{
   switch (action.type) {
     case "ADD": //is Action
         state = {
-          result : state.result += action.payload,
+          result : state.result ,
           value : state.value
         }
       break;
