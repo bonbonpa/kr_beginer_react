@@ -38,11 +38,18 @@ const reducer = (state=initialState,action)=>{
           /*result : state.result ,
           value : state.value*/
           ...state, //show state all
-          result: state.result += action.payload
+          result: state.result += action.payload,
+          value : [...state.value,action.payload]
         }
       break;
     case "SUBTRACT":
-
+    state = {
+      /*result : state.result ,
+      value : state.value*/
+      ...state, //show state all
+      result: state.result -= action.payload,
+      value : [...state.value,action.payload]
+    }
       break;
   }
   return state;
@@ -57,4 +64,12 @@ store.subscribe(()=>{
 store.dispatch({
   type: "ADD",
   payload : 10000
+})
+store.dispatch({
+  type: "ADD",
+  payload : 14000
+})
+store.dispatch({
+  type: "SUBTRACT",
+  payload : 4000
 })
