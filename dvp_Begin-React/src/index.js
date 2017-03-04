@@ -35,8 +35,10 @@ const reducer = (state=initialState,action)=>{
   switch (action.type) {
     case "ADD": //is Action
         state = {
-          result : state.result ,
-          value : state.value
+          /*result : state.result ,
+          value : state.value*/
+          ...state, //show state all
+          result: state.result += action.payload
         }
       break;
     case "SUBTRACT":
