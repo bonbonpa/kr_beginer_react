@@ -1,7 +1,13 @@
 ![raect](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSithoqiOTODZ73obUF3Nj5bDueB4HG9PMUNQDVV9ROcKlijncE)
+![redux](http://blog.js-republic.com/wp-content/uploads/2016/11/logo-redux.png)
+
+> current update : 2017-03-05
+
 
 - [Start React](#start-react)
 - [Start Redux](#start-redux)
+
+[TOC]
 
 # Start React
 
@@ -467,7 +473,7 @@ ReactDOM.render(
 <h1><a href="/">Home</a></h1>
 ```
 
-> current update : 2017-02-13
+
 ------
 
 # Start Redux
@@ -543,7 +549,7 @@ store.dispatch({
 ```
 
 
-3. Multi State
+## 3. Multi State
 
 ```js
 import {createStore} from 'redux';
@@ -596,3 +602,94 @@ store.dispatch({
   payload : 4000
 })
 ```
+
+## 4. Multiple Reducer
+
+```js
+
+import {createStore ,combineReducers} from 'redux';
+
+//declare begin of state
+const initialState = {
+  result : 20000,
+  value : []
+}
+
+//Reducer 1
+const UserReducer = (state={ name : "nii" , age : 20},action)=>{
+  switch (action.type) {
+    case "setName": //is Action
+        state = {
+          ...state, //show state all
+          name: action.payload
+        }
+      break;
+    case "setAge":
+        state = {
+          ...state, //show state all
+          age:action.payload
+        }
+      break;
+  }
+  return state;
+}
+// Reducer 2
+const EmployeeReducer = (state=initialState,action)=>{
+  switch (action.type) {
+    case "ADD": //is Action
+        state = {
+          /*result : state.result ,
+          value : state.value*/
+          ...state, //show state all
+          result: state.result += action.payload,
+          value : [...state.value,action.payload]
+        }
+      break;
+    case "SUBTRACT":
+    state = {
+      /*result : state.result ,
+      value : state.value*/
+      ...state, //show state all
+      result: state.result -= action.payload,
+      value : [...state.value,action.payload]
+    }
+      break;
+  }
+  return state;
+}///
+const store = createStore(combineReducers({EmployeeReducer , UserReducer}));
+
+//subscribe
+store.subscribe(()=>{
+  console.log("Update Store",store.getState());
+})
+//change data in Store
+store.dispatch({
+  type: "ADD",
+  payload : 10000
+})
+store.dispatch({
+  type : "setName",
+  payload: "DISPATCH"
+});
+store.dispatch({
+  type : "setAge",
+  payload : 30
+})
+/*store.dispatch({
+  type: "ADD",
+  payload : 14000
+})
+store.dispatch({
+  type: "SUBTRACT",
+  payload : 4000
+})
+*/
+```
+
+
+Resource ::
+> **Getting Started with React, Redux and Immutable: a Test-Driven Tutorial (Part 1)**
+- http://www.theodo.fr/blog/2016/03/getting-started-with-react-redux-and-immutable-a-test-driven-tutorial-part-1/
+> **Getting Started with React, Redux and Immutable: a Test-Driven Tutorial (Part 2)**
+- http://www.theodo.fr/blog/2016/03/getting-started-with-react-redux-and-immutable-a-test-driven-tutorial-part-2/
