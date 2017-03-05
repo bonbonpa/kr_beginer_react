@@ -1,11 +1,10 @@
-![raect](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSithoqiOTODZ73obUF3Nj5bDueB4HG9PMUNQDVV9ROcKlijncE)
-![redux](http://blog.js-republic.com/wp-content/uploads/2016/11/logo-redux.png)
+![raect+redux](http://www.clipular.com/c/5678342236012544.png?k=I5uW7rqV0CcInTLADudsF72-rGg)
+
 
 > current update : 2017-03-05
 
 
-- [Start React](#start-react)
-- [Start Redux](#start-redux)
+ [React](#start-react) + [Redux](#start-redux)
 
 [TOC]
 
