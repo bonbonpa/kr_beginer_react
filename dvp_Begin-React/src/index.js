@@ -24,14 +24,32 @@ ReactDOM.render(
 );
 */
 
-import {createStore} from 'redux';
+import {createStore ,combineReducers} from 'redux';
 
 //declare begin of state
 const initialState = {
   result : 20000,
   value : []
 }
-const reducer = (state=initialState,action)=>{
+//Reducer
+const UserReducer = (state={ name : "nii" , age : 20},action)=>{
+  switch (action.type) {
+    case "setName": //is Action
+        state = {
+          ...state, //show state all
+          name: action.payload
+        }
+      break;
+    case "setAge":
+        state = {
+          ...state, //show state all
+          age:action.payload
+        }
+      break;
+  }
+  return state;
+}
+const EmployeeReducer = (state=initialState,action)=>{
   switch (action.type) {
     case "ADD": //is Action
         state = {
@@ -54,7 +72,7 @@ const reducer = (state=initialState,action)=>{
   }
   return state;
 }///
-const store = createStore(reducer);
+const store = createStore(combineReducers({EmployeeReducer , UserReducer}));
 
 //subscribe
 store.subscribe(()=>{
@@ -66,6 +84,14 @@ store.dispatch({
   payload : 10000
 })
 store.dispatch({
+  type : "setName",
+  payload: "DISPATCH"
+});
+store.dispatch({
+  type : "setAge",
+  payload : 30
+})
+/*store.dispatch({
   type: "ADD",
   payload : 14000
 })
@@ -73,3 +99,4 @@ store.dispatch({
   type: "SUBTRACT",
   payload : 4000
 })
+*/
