@@ -3,8 +3,9 @@
 
 > current update : 2017-03-05
 
-
  [React](#start-react) + [Redux](#start-redux)
+
+## TOC  
 
  - [Start React](#start-react)
    * [1. Intro React](#1-intro-react)
@@ -38,6 +39,9 @@
    * [2. Store Reduecer & Dispatch](#2-store-reduecer---dispatch)
    * [3. Multi State](#3-multi-state)
    * [4. Multiple Reducer](#4-multiple-reducer)
+
+
+- [Resource](#resource)
 
 # Start React
 
@@ -511,19 +515,24 @@ ReactDOM.render(
 ## 1. Redux Concept
 
 Redux is manage state data with Application
+
 How to know data will 'Subscibe'
 
 State All keeping in 'Store' who want to 'Edit' data in 'Store' will do 'Dispatch' interest 'State' ? just do 'Subscribe State' it you want
 
 Redux priciple of 3 things
+
 1. **State** with all of system will storing in the one place is called 'Store'.
+
 2. **State is read-only** -> status anything is not change so when event or Action begin sill do create new 'State' continue  old 'State' by not edit older 'State'
+
 3. **Changes are made with pure functions** when begin event 'State' next is it? Is the mission of 'Reducer' which 'Reducer' will is **Pure function** by consider 'State' current + Action it make to 'State' next to begin which 'Reducer' will send new 'State' out only by not change 'State' before utterly.
 
 ![redux](http://www.clipular.com/c/6577732714758144.png?k=jKyvyX8ppGBdcVnFdOMKqr0y-Bo)
 
 
 What have in Store ?
+
 - Dispatch manage 'Action' in change 'State'
 - Reducer will calculate 'State' next or keep command will change 'State' is 'Pure Function' receive 'input' is 'Current State' and 'Action Return State' out come
 
@@ -717,8 +726,8 @@ store.dispatch({
 */
 ```
 
-
-Resource ::
+[Up](#toc)
+#### Resource ::
 > **Getting Started with React, Redux and Immutable: a Test-Driven Tutorial (Part 1)**
 - http://www.theodo.fr/blog/2016/03/getting-started-with-react-redux-and-immutable-a-test-driven-tutorial-part-1/
 > **Getting Started with React, Redux and Immutable: a Test-Driven Tutorial (Part 2)**
